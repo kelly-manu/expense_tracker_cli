@@ -38,3 +38,16 @@ source venv/bin/activate
 ```terminaloutput
 pip install -r requirements.txt
 ```
+## Use
+```terminaloutput
+python expense_tracker.py -h #Help
+python expense_tracker.py add --description "Ticket" --amount 10.45 #Adds an expense
+python expense_tracker.py update --id 1 --category "General" #Updates the category of the expense with ID: 1
+python expense_tracker.py delete --id 1 # Deletes an expense
+python expense_tracker.py list # Shows a list of all expenses added
+python expense_tracker.py list --month 4 # Shows a list of all expenses added in April
+python expense_tracker.py list --month 4 --filter "General" # Shows a list of all expenses in April under the General category
+python expense_tracker.py list --filter "General" # Shows a list of every expense under the General category
+python expense_tracker.py summary # Generates a pie-chart of all expenses in each category
+python expense_tracker.py summary --month 4 # Generates a pie-chart based on the expenses added in April
+```
