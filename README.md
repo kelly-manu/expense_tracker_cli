@@ -6,3 +6,35 @@ The Expense Tracker is a command line interface program designed to help users t
 This program uses the _**matplotlib**_ library to generate visual reports of the expenses.
 
 It was inspired by the [Expense Tracker](https://www.roadmap.sh/project/expense-tracker) project from [roadmap.sh](https://www.roadmap.sh)
+## Features
+- **Add Expense**: Users can add new expenses with details such as description, amount and category.
+- **Delete Expense**: Users can delete an expense.
+- **Update Expense**: Users can update an expense by changing its category.
+- **View Expenses**: Users can view a list of all expenses added.
+- **View Expenses with filters**: Users can view a list of expenses filtered by month and category
+- **Generate Reports**: Users can generate a chart of their expense for a specific month or every expense.
+
+## Prerequisites
+- Python 3.13.5
+- Git
+## Installation
+1. Clone the repository:
+```terminaloutput
+git clone https://github.com/kelly-manu/expense_tracker_cli.git
+cd expense_tracker_cli/
+```
+2. Create a Virtual Environment:
+```terminaloutput
+python -m venv venv
+```
+```terminaloutput
+# Activate Environment on Windows:
+.\venv\Scripts\activate.bat
+
+# Activate on MacOS and Linux:
+source venv/bin/activate
+```
+3. Install the dependencies:
+```terminaloutput
+pip install -r requirements.txt
+```
