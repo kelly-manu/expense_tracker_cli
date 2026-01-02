@@ -69,7 +69,6 @@ def generate_pie_chart(values, keys, month=None):
     """
     if month:
         plt.title(f"Expense chart for the month of {month}")
-
     else:
         plt.title(f"Expense chart")
 
@@ -82,7 +81,6 @@ def add_expense(expense):
     :param expense: The expense object to be added
     :return: None.
     """
-
     if expense.amount <= 0:
         print("Amount cannot be less than 0")
         return
@@ -117,7 +115,6 @@ def update_expense(expense_id, update):
     :param update: The new category
     :return: None.
     """
-
     data = load_expense()
     for item in data:
         if item["id"] == expense_id:
@@ -133,7 +130,6 @@ def delete_expense(expense_id):
     :param expense_id: The ID of the expense to be deleted.
     :return: None
     """
-
     data = load_expense()
     for item in data:
         if item["id"] == expense_id:
@@ -145,12 +141,9 @@ def delete_expense(expense_id):
 
 def list_expenses(month=None, filter=None):
     """
-    Lists the expenses in a category during a month or all-time OR
-    Lists every expense ever added.
-
+    Lists the expenses in a category during a month or all-time OR Lists every expense ever added.
     :param month: The month of the expenses to be listed.
     :param filter: The category of the expenses
-
     :return: None
     """
     data = load_expense()
@@ -203,7 +196,6 @@ def summary(month=None):
     :param month: The specific month of the expenses to be summarized.
     :return: None
     """
-
     data = load_expense()
     data_dict = {}
     if month:
