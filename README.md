@@ -50,4 +50,5 @@ python expense_tracker.py list --month 4 --filter "General" # Shows a list of al
 python expense_tracker.py list --filter "General" # Shows a list of every expense under the General category
 python expense_tracker.py summary # Generates a pie-chart of all expenses in each category
 python expense_tracker.py summary --month 4 # Generates a pie-chart based on the expenses added in April
+python expense_tracker.py export # Exports expense data to a CSV file
 ```
