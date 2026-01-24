@@ -1,4 +1,5 @@
 import json
+import csv
 import os
 from enum import Enum
 from datetime import datetime
@@ -219,3 +220,17 @@ def summary(month=None):
             else:
                 data_dict[item_category] += item["amount"]
         generate_pie_chart(data_dict.values(), data_dict.keys())
+
+def convert_to_csv():
+    if os.path.exists("expenses.csv"):
+        os.remove("expenses.csv")
+    with open("expenses.csv", "a", newline="") as file:
+        fieldnames = ["id", "description", "category", "amount", "dateAdded"]
+        csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+        csv_writer.writeheader()
+        data = load_expense()
+        for item in data:
+            csv_writer.writerow({"id": item["id"], "description": item["description"],
+                                 "category": item["category"], "amount": item["amount"], "dateAdded": datetime.fromisoformat(item['dateAdded']).strftime('%d-%m-%Y')})
+
+    print("Expense data successfully converted to CSV")

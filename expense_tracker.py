@@ -39,6 +39,8 @@ def main():
     summary_parser = subparsers.add_parser("summary", help="Show expense summary")
     summary_parser.add_argument("-m", "--month", help="Month", type=int)
 
+    export_parser = subparsers.add_parser("export", help="Export to csv")
+
     arguments = parser.parse_args()
 
     if arguments.command == "add":
@@ -62,6 +64,9 @@ def main():
 
     if arguments.command == "summary":
         cmd.summary(arguments.month)
+
+    if arguments.command == "export":
+        cmd.convert_to_csv()
 
 if __name__ == "__main__":
     main()
